@@ -388,7 +388,7 @@ button {
   position: absolute;
   top: auto;
   bottom: 4.5rem;
-  right: 2.5rem;
+  right: 4rem;
   z-index: 5;
   background: rgba(30, 30, 30, 0.75);
   backdrop-filter: blur(28px) saturate(180%);

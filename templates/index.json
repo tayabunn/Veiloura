@@ -2,6 +2,31 @@
   "sections": {
     "hero": {
       "type": "hero-banner",
+      "blocks": {
+        "tag_1": {
+          "type": "tag_item",
+          "settings": {
+            "tag_text": "Keep Stylish"
+          }
+        },
+        "tag_2": {
+          "type": "tag_item",
+          "settings": {
+            "tag_text": "Fashion for Every Moment"
+          }
+        },
+        "tag_3": {
+          "type": "tag_item",
+          "settings": {
+            "tag_text": "Trendy Fashion"
+          }
+        }
+      },
+      "block_order": [
+        "tag_1",
+        "tag_2",
+        "tag_3"
+      ],
       "settings": {
         "heading": "Unleash Your Style with Our New Collection",
         "subheading": "Unleash your style and express individuality with our new collection, designed to elevate your wardrobe and make a bold statement wherever you go."

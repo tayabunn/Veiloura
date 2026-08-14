@@ -1,5 +1,9 @@
 {%- liquid
-  assign bg_img = section.settings.bg_image | image_url: width: 2000 | default: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop"
+  if section.settings.bg_image
+    assign bg_img = section.settings.bg_image | image_url: width: 2000
+  else
+    assign bg_img = 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop'
+  endif
 -%}
 
 <section class="cta-banner-section" aria-label="Fashion Banner Callout">

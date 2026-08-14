@@ -18,7 +18,11 @@
     <div class="recommendations-grid">
       {% for block in section.blocks %}
         {%- liquid
-          assign article_img = block.settings.image | image_url: width: 800 | default: block.settings.fallback_img_url
+          if block.settings.image
+            assign article_img = block.settings.image | image_url: width: 800
+          else
+            assign article_img = block.settings.fallback_img_url
+          endif
         -%}
         <article class="rec-card" {{ block.shopify_attributes }}>
           <img 

@@ -306,7 +306,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4.5rem 4rem 3.5rem 4rem;
+  padding: 4.5rem 4rem 1.5rem 4rem;
 }
 
 .hero-bg-wrapper {
@@ -340,18 +340,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: inherit;
-}
-
-/* Middle row: left text + right card */
-.hero-main-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  gap: 2rem;
-  padding-bottom: 1.5rem;
+  min-height: 700px;
 }
 
 .hero-text-content {
@@ -383,12 +372,10 @@ button {
   justify-content: space-between;
   width: 100%;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 4;
 }
 
 .hero-tag-item {
-  flex: 1;
   font-size: 0.9375rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
@@ -396,35 +383,22 @@ button {
   align-items: center;
 }
 
-.hero-tag-item:nth-child(1) {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.hero-tag-item:nth-child(2) {
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-tag-item:nth-child(3) {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-/* Floating Featured Product Preview Card */
+/* Floating Featured Product Preview Card (Exact Match to Reference Design) */
 .hero-product-preview {
-  position: relative;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
   z-index: 5;
-  background: rgba(22, 22, 22, 0.78);
+  background: rgba(30, 30, 30, 0.75);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
   padding: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  width: 240px;
-  flex-shrink: 0;
+  width: 260px;
+  max-width: 90%;
 }
 
 .hero-preview-top {
@@ -474,7 +448,7 @@ button {
 
 .hero-preview-image-box {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1.1 / 1;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 0.875rem;
@@ -549,18 +523,17 @@ button {
     padding: 2.5rem 1.5rem;
     min-height: auto;
   }
-  .hero-main-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
   .hero-content-inner {
     min-height: auto;
-    gap: 2rem;
+    gap: 3rem;
   }
   .hero-product-preview {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    right: auto;
     width: 100%;
-    max-width: 320px;
+    margin-top: 2rem;
   }
 }
 

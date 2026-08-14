@@ -386,7 +386,8 @@ button {
 /* Floating Featured Product Preview Card (Exact Match to Reference Design) */
 .hero-product-preview {
   position: absolute;
-  top: 2.5rem;
+  top: auto;
+  bottom: 4.5rem;
   right: 2.5rem;
   z-index: 5;
   background: rgba(30, 30, 30, 0.75);

@@ -28,13 +28,6 @@
         "subheading": "Discover and dive into our most popular and best-selling categories that everyone is talking about!"
       }
     },
-    "recommendations": {
-      "type": "product-recommendations-blog",
-      "settings": {
-        "heading": "Product Recommendations",
-        "subheading": "From fashion to tech gadgets, there's something for everyone. Join the conversation and see what the buzz is!"
-      }
-    },
     "cta_stratosphere": {
       "type": "cta-banner",
       "settings": {
@@ -48,7 +41,6 @@
     "best_sellers",
     "value_props",
     "new_collection_grid",
-    "recommendations",
     "cta_stratosphere"
   ]
 }

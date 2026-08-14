@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Unleash Your Style with Our New Collection",
+        "subheading": "Unleash your style and express individuality with our new collection, designed to elevate your wardrobe and make a bold statement wherever you go."
+      }
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Explore Our Best Selling Product Collection",
+        "subheading": "Discover and dive into our most popular and best-selling categories that everyone is talking about!"
+      }
+    },
+    "value_props": {
+      "type": "value-props",
+      "settings": {
+        "heading": "We Deliver Exceptional Customer Experiences",
+        "subheading": "We are committed to delivering exceptional customer experiences that exceed expectations and make every interaction memorable."
+      }
+    },
+    "new_collection_grid": {
+      "type": "asymmetric-grid-collection",
+      "settings": {
+        "heading": "Explore Our New Collection",
+        "subheading": "Discover and dive into our most popular and best-selling categories that everyone is talking about!"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations-blog",
+      "settings": {
+        "heading": "Product Recommendations",
+        "subheading": "From fashion to tech gadgets, there's something for everyone. Join the conversation and see what the buzz is!"
+      }
+    },
+    "cta_stratosphere": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Let's Take Your Fashion to The Stratosphere",
+        "subheading": "Ready to elevate your style? Let's launch your fashion into the stratosphere with bold choices and unique trends!"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "best_sellers",
+    "value_props",
+    "new_collection_grid",
+    "recommendations",
+    "cta_stratosphere"
+  ]
+}

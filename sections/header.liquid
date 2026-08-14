@@ -1,0 +1,85 @@
+<header class="site-header" role="banner">
+  <div class="page-container site-header-inner">
+    <!-- Navigation Menu (Left) -->
+    <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+      {% if section.settings.menu != blank %}
+        {% for link in section.settings.menu.links %}
+          <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="#" class="nav-link">Men</a>
+        <a href="#" class="nav-link">Ladies</a>
+        <a href="#" class="nav-link">New Collection</a>
+      {% endif %}
+    </nav>
+
+    <!-- Brand Logo (Center) -->
+    <div class="header-brand-logo">
+      <a href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+        {% if section.settings.logo_image != blank %}
+          <img src="{{ section.settings.logo_image | image_url: width: 120 }}" alt="{{ shop.name }}" width="40" height="40">
+        {% else %}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+            <line x1="4.93" y1="19.07" x2="19.07" y2="4.93"></line>
+            <path d="M8 8l4 4-4 4"></path>
+            <path d="M16 8l-4 4 4 4"></path>
+            <path d="M8 8l4 4 4-4"></path>
+            <path d="M8 16l4-4 4 4"></path>
+          </svg>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Actions (Right) -->
+    <div class="header-actions">
+      <a href="{{ routes.cart_url }}" class="header-cart-btn" aria-label="View Shopping Cart">
+        <span>Cart(<span class="header-cart-badge">0</span>)</span>
+      </a>
+      
+      {% if section.settings.show_signup %}
+        <a href="{{ routes.account_url }}" class="nav-link">{{ section.settings.signup_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header Navigation",
+  "tag": "section",
+  "class": "section-header-wrapper",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Custom Brand Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Header Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_signup",
+      "label": "Show Sign Up link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "signup_text",
+      "label": "Sign Up Link Text",
+      "default": "Sign Up"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Navigation"
+    }
+  ]
+}
+{% endschema %}

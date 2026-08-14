@@ -1,0 +1,67 @@
+{% comment %}
+  Renders a reusable Shopify OS 2.0 Product Card Snippet
+
+  Accepts:
+  - product: {Object} Liquid product object (optional)
+  - fallback_title: {String} Title fallback if product is missing
+  - fallback_price: {String} Price fallback
+  - fallback_compare_price: {String} Compare price fallback
+  - fallback_item_count: {String} Item count label e.g. "(20 Item)"
+  - fallback_image: {String} Image URL fallback
+  - category_tag: {String} Category key for JavaScript tab filtering
+{% endcomment %}
+
+{%- liquid
+  assign card_product = product
+  assign title = fallback_title | default: card_product.title | default: "Product Title"
+  assign price = fallback_price | default: "$250"
+  assign compare_price = fallback_compare_price
+  assign item_count = fallback_item_count | default: "(15 Item)"
+  assign image_url = fallback_image | default: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800&auto=format&fit=crop"
+  
+  if card_product != blank
+    assign image_url = card_product.featured_media | image_url: width: 800
+    assign price = card_product.price | money
+    if card_product.compare_at_price > card_product.price
+      assign compare_price = card_product.compare_at_price | money
+    endif
+  endif
+-%}
+
+<div class="product-card" data-category="{{ category_tag | default: 'all' | handle }}">
+  <!-- Image Wrapper & Wishlist -->
+  <div class="product-card-image-wrapper">
+    <img 
+      src="{{ image_url }}" 
+      alt="{{ title | escape }}" 
+      class="product-card-img"
+      loading="lazy"
+      width="600"
+      height="700"
+    >
+    <button type="button" class="product-card-wishlist" aria-label="Add {{ title | escape }} to wishlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Product Details -->
+  <div class="product-card-info">
+    <div class="product-card-header">
+      <h3 class="product-card-title">
+        <a href="{{ card_product.url | default: '#' }}">{{ title }}</a>
+      </h3>
+      {% if item_count != blank %}
+        <span class="product-card-item-count">{{ item_count }}</span>
+      {% endif %}
+    </div>
+
+    <div class="product-card-pricing">
+      <span class="product-card-price">{{ price }}</span>
+      {% if compare_price != blank %}
+        <span class="product-card-compare-price">{{ compare_price }}</span>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+<section class="recommendations-section" aria-label="Product Recommendations & Articles">
+  <div class="page-container">
+    <!-- Header -->
+    <div class="section-header">
+      <div class="section-header-left">
+        <h2 class="section-title">{{ section.settings.heading }}</h2>
+        <p class="section-subtitle">{{ section.settings.subheading }}</p>
+      </div>
+
+      {% if section.settings.show_button %}
+        <a href="{{ section.settings.button_url }}" class="btn btn-dark">
+          {{ section.settings.button_text }} ↗
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- 3 Article / Recommendation Cards -->
+    <div class="recommendations-grid">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign article_img = block.settings.image | image_url: width: 800 | default: block.settings.fallback_img_url
+        -%}
+        <article class="rec-card" {{ block.shopify_attributes }}>
+          <img 
+            src="{{ article_img }}" 
+            alt="{{ block.settings.title | escape }}" 
+            class="rec-card-image"
+            loading="lazy"
+            width="600"
+            height="400"
+          >
+          <div class="rec-card-body">
+            <h3 class="rec-card-title">{{ block.settings.title }}</h3>
+            <p class="rec-card-excerpt">{{ block.settings.excerpt }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "tag": "section",
+  "class": "section-recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Product Recommendations"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "From fashion to tech gadgets, there's something for everyone. Join the conversation and see what the buzz is!"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/blogs/news"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "recommendation_card",
+      "name": "Recommendation Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_img_url",
+          "label": "Fallback Unsplash Image URL",
+          "default": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Urban Tee is a Stylish, Comfortable Piece for City Life."
+        },
+        {
+          "type": "textarea",
+          "id": "excerpt",
+          "label": "Excerpt",
+          "default": "Made from quality materials, this tee blends softness and durability, perfect for casual outings and weekends."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Recommendations",
+      "blocks": [
+        {
+          "type": "recommendation_card",
+          "settings": {
+            "title": "The Urban Tee is a Stylish, Comfortable Piece for City Life.",
+            "excerpt": "Made from quality materials, this tee blends softness and durability, perfect for casual outings and weekends.",
+            "fallback_img_url": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop"
+          }
+        },
+        {
+          "type": "recommendation_card",
+          "settings": {
+            "title": "The Eco-Friendly Hoodie is a Sustainable Choice for Everyday Wear.",
+            "excerpt": "Crafted from recycled fabrics, this hoodie offers warmth and style while reducing your carbon footprint.",
+            "fallback_img_url": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop"
+          }
+        },
+        {
+          "type": "recommendation_card",
+          "settings": {
+            "title": "The Athletic Joggers are Designed for Performance and Comfort.",
+            "excerpt": "Featuring moisture-wicking technology, these joggers are great for workouts and relaxing, offering flexibility.",
+            "fallback_img_url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

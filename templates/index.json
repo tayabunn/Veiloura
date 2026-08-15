@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -27,16 +36,29 @@
         "tag_2",
         "tag_3"
       ],
+      "custom_css": [],
       "settings": {
+        "container_border_radius": 16,
+        "hero_height": 850,
+        "gradient_opacity": 95,
         "heading": "Unleash Your Style with Our New Collection",
-        "subheading": "Unleash your style and express individuality with our new collection, designed to elevate your wardrobe and make a bold statement wherever you go."
+        "subheading": "Unleash your style and express individuality with our new collection, designed to elevate your wardrobe and make a bold statement wherever you go.",
+        "preview_badge_text": "New Collection",
+        "preview_product_title": "Nerdy Sparkling Short Sleeve T-Shirt Black",
+        "preview_product_category": "Apparel • Shirt",
+        "preview_product_price": "$150"
       }
     },
     "best_sellers": {
       "type": "featured-collection",
       "settings": {
         "heading": "Explore Our Best Selling Product Collection",
-        "subheading": "Discover and dive into our most popular and best-selling categories that everyone is talking about!"
+        "subheading": "Discover and dive into our most popular and best-selling categories that everyone is talking about!",
+        "collection": "",
+        "products_to_show": 6,
+        "show_cta_button": true,
+        "cta_text": "Let's Shop Now",
+        "cta_url": "shopify://collections/all"
       }
     },
     "value_props": {
@@ -57,7 +79,9 @@
       "type": "cta-banner",
       "settings": {
         "heading": "Let's Take Your Fashion to The Stratosphere",
-        "subheading": "Ready to elevate your style? Let's launch your fashion into the stratosphere with bold choices and unique trends!"
+        "subheading": "Ready to elevate your style? Let's launch your fashion into the stratosphere with bold choices and unique trends!",
+        "button_text": "Get Started Now",
+        "button_url": "shopify://collections/all"
       }
     }
   },

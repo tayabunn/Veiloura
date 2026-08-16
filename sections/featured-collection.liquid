@@ -4,14 +4,25 @@
     <div class="section-header">
       <div class="section-header-left">
         <h2 class="section-title">{{ section.settings.heading }}</h2>
-        <p class="section-subtitle">{{ section.settings.subheading }}</p>
       </div>
 
-      {% if section.settings.show_cta_button %}
-        <a href="{{ section.settings.cta_url }}" class="btn btn-dark">
-          {{ section.settings.cta_text }} 🛍️
-        </a>
-      {% endif %}
+      <div class="section-header-right">
+        <p class="section-subtitle">{{ section.settings.subheading }}</p>
+        {% if section.settings.show_cta_button %}
+          <div class="header-actions-group">
+            <a href="{{ section.settings.cta_url }}" class="btn btn-dark">
+              {{ section.settings.cta_text }}
+            </a>
+            <a href="{{ section.settings.cta_url }}" class="btn-icon btn-icon-dark" aria-label="Shop Now">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </a>
+          </div>
+        {% endif %}
+      </div>
     </div>
 
     <!-- Category Filter Tabs Bar -->

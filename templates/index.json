@@ -63,6 +63,37 @@
     },
     "value_props": {
       "type": "value-props",
+      "blocks": {
+        "block_1": {
+          "type": "feature_card",
+          "settings": {
+            "icon_type": "support",
+            "title": "Quick and Friendly Support",
+            "description": "Our support team responds quickly and is friendly, ensuring your experience is efficient and pleasant. We prioritize your needs and assist you every step."
+          }
+        },
+        "block_2": {
+          "type": "feature_card",
+          "settings": {
+            "icon_type": "collection",
+            "title": "New Collection Everyday",
+            "description": "Explore our new collection launched daily! Each piece is designed to add a fresh twist to your style. Stay tuned for updates and find something special!"
+          }
+        },
+        "block_3": {
+          "type": "feature_card",
+          "settings": {
+            "icon_type": "satisfaction",
+            "title": "Satisfaction Guaranteed",
+            "description": "We guarantee your satisfaction with our support team, quick to respond and friendly. Your experience is our priority, and we're here to assist you."
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
       "settings": {
         "heading": "We Deliver Exceptional Customer Experiences",
         "subheading": "We are committed to delivering exceptional customer experiences that exceed expectations and make every interaction memorable."

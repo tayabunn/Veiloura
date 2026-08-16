@@ -19,16 +19,7 @@
         {% if section.settings.logo_image != blank %}
           <img src="{{ section.settings.logo_image | image_url: width: 120 }}" alt="{{ shop.name }}" width="40" height="40">
         {% else %}
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="2" x2="12" y2="22"></line>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-            <line x1="4.93" y1="19.07" x2="19.07" y2="4.93"></line>
-            <path d="M8 8l4 4-4 4"></path>
-            <path d="M16 8l-4 4 4 4"></path>
-            <path d="M8 8l4 4 4-4"></path>
-            <path d="M8 16l4-4 4 4"></path>
-          </svg>
+          <img src="{{ 'Veiloura-logo.png' | asset_url }}" alt="{{ shop.name }}" class="brand-logo" style="height: 32px; width: auto; object-fit: contain;">
         {% endif %}
       </a>
     </div>

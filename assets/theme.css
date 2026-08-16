@@ -223,24 +223,19 @@ button {
 .header-actions-group {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 0px;
 }
 
 .header-actions-group .btn {
   height: 60px;
   padding: 0 3rem 0 2rem;
   font-size: 1.125rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 .header-actions-group .btn-icon,
 .header-actions-group .btn-icon-dark {
   width: 60px;
   height: 60px;
-  margin-left: -24px;
-  box-shadow: 0 0 0 4px var(--color-bg-light);
-  z-index: 2;
 }
 
 /* Group hover animations for a cohesive feel */
